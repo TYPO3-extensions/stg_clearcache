@@ -2,7 +2,8 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2009 Steffen Gebert (steffen@steffen-gebert.de)
+ *  (c) 2009-2010 Steffen Gebert (steffen@steffen-gebert.de)
+ *                for Freie Wähler Bayern e.V.
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -21,6 +22,11 @@
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+/**
+ * Recursive cache clearing
+ * $Id$
+ * @author Steffen Gebert
+ */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
  *
@@ -42,6 +48,9 @@ class tx_stgclearcache {
 	/* @var $tceMainInstance t3lib_TCEmain */
 	var $tceMainInstance;
 
+	/* @var $id Page ID */
+	var $id;
+
 	/**
 	 * Clear cache post processor.
 	 * The same structure as t3lib_TCEmain::clear_cache
@@ -60,12 +69,9 @@ class tx_stgclearcache {
 				$this->tceMainInstance = t3lib_div::makeInstance('t3lib_TCEmain');
 			}
 
-			if ($GLOBALS['BE_USER']->user['admin']) {
-				$perms_clause = '1=1';
-			}
-			else {
-				$perms_clause = 'perms_userid=' . intval($GLOBALS['BE_USER']->user["uid"]);
-			}
+			$this->id = $params['cacheCmd'];
+
+			$perms_clause = $this->getPermsClause();
 
 			// read out all pages below this one
 			// it's not possible, to directly get ALL pages below, because this function is also
@@ -89,6 +95,39 @@ class tx_stgclearcache {
 			}
 		}
 	}
+
+	/**
+	 * Calculates the WHERE clause based on the user's permissions
+	 * 
+	 * @return	void
+	 */
+	function getPermsClause() {
+
+			// by default, everybody is allowed
+		$perms_clause = '1=1';
+
+			// we don't have to check anything for admins
+		if (!$GLOBALS['BE_USER']->isAdmin()) {
+			$pageTS = t3lib_BEfunc::getPagesTSconfig($this->id);
+			$accessCheck = $pageTS['options.']['tx_stgclearcache.']['accessCheck'];
+			switch ($accessCheck) {
+				case 'ownerUser':
+					$perms_clause = 'perms_userid=' . intval($GLOBALS['BE_USER']->user['uid']);
+					break;
+				case 'ownerGroup':
+					$perms_clause = 'perms_groupid IN (' . $GLOBALS['BE_USER']->user['groups'] . ')';
+					break;
+				case 'read':
+					$perms_clause = $GLOBALS['BE_USER']->getPagePermsClause(1);
+					break;
+				case 'write':
+					$perms_clause = $GLOBALS['BE_USER']->getPagePermsClause(2);
+					break;
+			}
+		}
+		return $perms_clause;
+	}
+
 }
 
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/stg_clearcache/class.tx_stgclearcache.php']) {

@@ -1,3 +1,9 @@
+2010-02-11 Steffen Gebert  <steffen@steffen-gebert.de>
+	* Release of version 2.1.0
+	* Feature #6167: Changed default behavior to have no limitations for cache clearing
+	* Feature: Added manual
+	* Feature: Added ext_autoload.php
+
 2009-10-02 Steffen Gebert  <steffen@steffen-gebert.de>
 
 	* initial release 2.0.0 in TER

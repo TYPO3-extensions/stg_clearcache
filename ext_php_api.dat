@@ -1,0 +1,19 @@
+a:2:{s:4:"meta";a:3:{s:5:"title";s:0:"";s:5:"descr";s:0:"";s:7:"options";a:2:{s:10:"usageCount";N;s:19:"includeCodeAbstract";N;}}s:5:"files";a:1:{s:14:"MD5_d8b3f12a3d";a:4:{s:8:"filename";s:26:"class.tx_stgclearcache.php";s:8:"filesize";i:4192;s:6:"header";a:5:{s:4:"text";s:31:"
+
+Recursive cache clearing
+$Id$";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:1:{i:0;s:22:"@author Steffen Gebert";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:14:"Steffen Gebert";}}}s:3:"DAT";a:3:{i:1;a:8:{s:6:"header";s:24:"class tx_stgclearcache {";s:5:"class";i:1;s:11:"parentClass";s:16:"tx_stgclearcache";s:4:"cDat";a:3:{s:4:"text";s:220:"
+
+[CLASS/FUNCTION INDEX of SCRIPT]
+
+
+
+  36: class tx_stgclearcache
+  53:     function clearCachePostProc (&$params, &$pObj)
+
+TOTAL FUNCTIONS: 1
+(This index is automatically created/updated by the extension "extdeveval")
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}}s:7:"content";s:0:"";s:12:"content_size";i:225;s:13:"content_lines";i:11;s:6:"atLine";i:40;}i:3;a:4:{s:6:"header";s:48:"function clearCachePostProc (&$params, &$pObj) {";s:11:"parentClass";s:16:"tx_stgclearcache";s:4:"cDat";a:3:{s:4:"text";s:79:"
+
+Clear cache post processor.
+The same structure as t3lib_TCEmain::clear_cache
+";s:5:"param";a:2:{i:0;a:2:{i:0;s:6:"object";i:1;s:25:"$_params: parameter array";}i:1;a:2:{i:0;s:6:"object";i:1;s:21:"$pObj: partent object";}}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:6:"atLine";i:60;}i:5;a:6:{s:6:"header";s:27:"function getPermsClause() {";s:11:"parentClass";s:16:"tx_stgclearcache";s:7:"content";s:0:"";s:12:"content_size";i:1008;s:13:"content_lines";i:31;s:6:"atLine";i:102;}}}}}

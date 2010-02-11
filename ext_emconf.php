@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Clear cache recursive',
-	'description' => '"Clear cache for this page" now also affects child pages, if user owns them. Is helpful in bigger installations, where each user has it\'s own branch and can\'t be allowed to clear the cache of the whole server.',
+	'description' => '"Clear cache for this page" now also affects child pages. This is helpful in bigger installations, where you can\'t/don\'t want to enable users to clear the cache of the whole server.',
 	'category' => 'be',
 	'shy' => 0,
 	'version' => '2.0.0',

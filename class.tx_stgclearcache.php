@@ -32,10 +32,11 @@
  *
  *
  *
- *   36: class tx_stgclearcache
- *   53:     function clearCachePostProc (&$params, &$pObj)
+ *   43: class tx_stgclearcache
+ *   63:     function clearCachePostProc (&$params, &$pObj)
+ *  105:     function getPermsClause()
  *
- * TOTAL FUNCTIONS: 1
+ * TOTAL FUNCTIONS: 2
  * (This index is automatically created/updated by the extension "extdeveval")
  *
  */
@@ -98,7 +99,7 @@ class tx_stgclearcache {
 
 	/**
 	 * Calculates the WHERE clause based on the user's permissions
-	 * 
+	 *
 	 * @return	void
 	 */
 	function getPermsClause() {

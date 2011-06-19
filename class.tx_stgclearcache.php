@@ -58,7 +58,7 @@ class tx_stgclearcache {
 	 * @return	void
 	 */
 	function clearCachePostProc (&$params, &$pObj) {
-		if ($params['cacheCmd'] && t3lib_div::testInt($params['cacheCmd'])) {
+		if (TYPO3_MODE === 'BE' && $params['cacheCmd'] && t3lib_div::testInt($params['cacheCmd'])) {
 
 			if ($this->queryGeneratorInstance == null) {
 				$this->queryGeneratorInstance = t3lib_div::makeInstance('t3lib_queryGenerator');

@@ -3,7 +3,7 @@
 ########################################################################
 # Extension Manager/Repository config file for ext "stg_clearcache".
 #
-# Auto generated 08-01-2011 13:31
+# Auto generated 19-06-2011 22:08
 #
 # Manual updates:
 # Only the data in the array - everything else is removed by next
@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => '"Clear cache for this page" now also affects child pages. This is helpful in bigger installations, where you can\'t/don\'t want to enable users to clear the cache of the whole server.',
 	'category' => 'be',
 	'shy' => 0,
-	'version' => '2.1.1',
+	'version' => '2.1.2',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
@@ -42,7 +42,7 @@ $EM_CONF[$_EXTKEY] = array(
 		'suggests' => array(
 		),
 	),
-	'_md5_values_when_last_written' => 'a:8:{s:9:"ChangeLog";s:4:"b49c";s:26:"class.tx_stgclearcache.php";s:4:"dc18";s:16:"ext_autoload.php";s:4:"97af";s:12:"ext_icon.gif";s:4:"934f";s:17:"ext_localconf.php";s:4:"890b";s:15:"ext_php_api.dat";s:4:"2dcb";s:13:"locallang.xml";s:4:"310c";s:14:"doc/manual.sxw";s:4:"7504";}',
+	'_md5_values_when_last_written' => 'a:8:{s:9:"ChangeLog";s:4:"3c84";s:26:"class.tx_stgclearcache.php";s:4:"75f3";s:16:"ext_autoload.php";s:4:"97af";s:12:"ext_icon.gif";s:4:"934f";s:17:"ext_localconf.php";s:4:"e1a3";s:15:"ext_php_api.dat";s:4:"2dcb";s:13:"locallang.xml";s:4:"310c";s:14:"doc/manual.sxw";s:4:"7504";}',
 	'suggests' => array(
 	),
 );

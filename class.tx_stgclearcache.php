@@ -46,9 +46,6 @@ class tx_stgclearcache {
 	/* @var $queryGeneratorInstance t3lib_queryGenerator */
 	var $queryGeneratorInstance;
 
-	/* @var $tceMainInstance t3lib_TCEmain */
-	var $tceMainInstance;
-
 	/* @var $id Page ID */
 	var $id;
 
@@ -65,9 +62,6 @@ class tx_stgclearcache {
 
 			if ($this->queryGeneratorInstance == null) {
 				$this->queryGeneratorInstance = t3lib_div::makeInstance('t3lib_queryGenerator');
-			}
-			if ($this->tceMainInstance == null) {
-				$this->tceMainInstance = t3lib_div::makeInstance('t3lib_TCEmain');
 			}
 
 			$this->id = $params['cacheCmd'];
@@ -91,7 +85,7 @@ class tx_stgclearcache {
 				// we know $params['cacheCmd'] is returned from getTreeList again, but we
 				// don't want to end in recursive loop
 				if ($page != $params['cacheCmd']) {
-					$this->tceMainInstance->clear_cacheCmd($page);
+					$pObj->clear_cacheCmd($page);
 				}
 			}
 		}

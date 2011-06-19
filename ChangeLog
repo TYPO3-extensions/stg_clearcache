@@ -1,6 +1,7 @@
 2011-06-19 Steffen Gebert  <steffen.gebert@typo3.org>
 	* Fixed bug #10050: Using deprecated XLLfile stuff (Thanks to Susanne Moog and Frank Kroeber)
 	* Fixed bug #6726: "Call to a member function isAdmin() on a non-object" with tx_comments in FE
+	* Raised dependency to TYPO3 version 4.5.0
 
 2011-01-08 Steffen Gebert  <steffen.gebert@typo3.org>
 	* Release of version 2.1.1

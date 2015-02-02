@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => '"Clear cache for this page" now also affects child pages. This is helpful in bigger installations, where you can\'t/don\'t want to enable users to clear the cache of the whole server.',
 	'category' => 'be',
 	'shy' => 0,
-	'version' => '2.1.2',
+	'version' => '2.2.0',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
@@ -35,7 +35,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'CGLcompliance_note' => '',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '4.5.0-0.0.0',
+			'typo3' => '6.2.0-0.0.0',
 		),
 		'conflicts' => array(
 		),
